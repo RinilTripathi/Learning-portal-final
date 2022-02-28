@@ -8,6 +8,7 @@ import java.util.List;
 public class LoginResponse {
     private String userId;
     private String password;
+    private String dept;
     private List<CategoryVo> categoryWiseVideo;
 
 

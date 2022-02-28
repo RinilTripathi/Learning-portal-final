@@ -146,6 +146,7 @@ public class VideoService {
             LoginResponse loginResponse=new LoginResponse();
             loginResponse.setPassword(userProfile.getPassword());
             loginResponse.setUserId(userProfile.getUserName());
+            loginResponse.setDept(userProfile.getCategory());
             List<CategoryVo> categoryVoList=new ArrayList<>();
             CategoryVo categoryVo=new CategoryVo();
             categoryVo.setCategory(userProfile.getCategory());
@@ -194,6 +195,7 @@ public class VideoService {
         }
         LoginResponse loginResponse=new LoginResponse();
         loginResponse.setUserId(categoryRequest.getUserId());
+        loginResponse.setDept(userProfile.getCategory());
         List<CategoryVo> categoryVoList=new ArrayList<>();
         loginResponse.setCategoryWiseVideo(categoryVoList);
         Map<String,List<VideoDetail>> categoryWiseVideo=videoDetails.stream().collect(Collectors.groupingBy(VideoDetail::getCategory));
@@ -250,6 +252,7 @@ public class VideoService {
 
         LoginResponse loginResponse=new LoginResponse();
         loginResponse.setUserId(searchKey.getUserId());
+        loginResponse.setDept(userProfile.getCategory());
         List<CategoryVo> categoryVoList=new ArrayList<>();
         loginResponse.setCategoryWiseVideo(categoryVoList);
         Map<String,List<VideoDetail>> categoryWiseVideo=videoDetails.stream().collect(Collectors.groupingBy(VideoDetail::getCategory));
